@@ -15,6 +15,7 @@ import android.os.ParcelFileDescriptor;
 import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
 
+import com.android.volley.Request;
 import com.google.firebase.messaging.RemoteMessage;
 
 import java.io.FileDescriptor;
@@ -66,7 +67,7 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
                 .setAutoCancel(true)
                 .setOngoing(false)
-                .setContentTitle(getString(R.string.app_name))
+                .setContentTitle(titulo)
                 .setTicker(getString(R.string.app_name))
                 .setDefaults(-1)
                 .setSmallIcon(android.R.drawable.ic_lock_idle_lock) //common_google_signin_btn_icon_dark)
@@ -75,7 +76,9 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
                 .addAction(android.R.drawable.btn_star_big_on,"Me Gusta", likeIntent)
                 .addAction(android.R.drawable.btn_star_big_on,"Escuchar", listenIntent)
                 //.addAction(android.R.drawable.ic_menu_share, "Share", shareIntent)
-                .setLights(Color.GREEN, 2000, 5000);
+                .setLights(Color.GREEN, 2000, 5000)
+                .setPriority(NotificationCompat.PRIORITY_HIGH); // definir la prioridad de la app (visibildad inmediata)
+
 
         NotificationCompat.BigPictureStyle notifBig=new NotificationCompat.BigPictureStyle(builder);
         int posSladsh=urlimagen.lastIndexOf('/');
