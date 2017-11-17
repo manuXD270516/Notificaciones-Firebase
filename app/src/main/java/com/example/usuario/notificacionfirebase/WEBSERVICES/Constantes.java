@@ -16,14 +16,14 @@ public class Constantes {
      * Puerto que utilizas para la conexión.
      * Dejalo en blanco si no has configurado esta carácteristica.
      */
-    private static final String PUERTO_HOST = ":8080";//":8080";//:63343";
-
+    //LOCAL private static final String PUERTO_HOST = ":8080";//":8080";//:63343";
+    private static final String PUERTO_HOST = "";//":8080";//:63343";
     /**
      * Dirección IP de genymotion o AVD
      */
 
-    private static final String IP ="192.168.43.168";////www.pruebaws.hol.es";///"192.168.0.29" ;//"192.168.0.166";//"10.0.3.2";
-
+    // LOCAL private static final String IP ="192.168.43.168";////www.pruebaws.hol.es";///"192.168.0.29" ;//"192.168.0.166";//"10.0.3.2";
+    private static final String IP ="www.pruebaws.hol.es";///"192.168.0.29" ;//"192.168.0.166";//"10.0.3.2";
     /**
      * URLs del Web Service
      */
